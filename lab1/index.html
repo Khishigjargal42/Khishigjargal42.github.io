@@ -1,10 +1,279 @@
 <!DOCTYPE html>
-<html>
+<html lang="mn">
 <head>
-    <title>Lab-1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гантулга Хишигжаргал - Энгийн CV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #4a6491;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .title {
+            color: #4a6491;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        section {
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            border-bottom: 1px solid #4a6491;
+            padding-bottom: 5px;
+        }
+        
+        .experience, .education, .award {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .item-title {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .item-date {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .item-org {
+            color: #4a6491;
+            margin-bottom: 5px;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 200px;
+            background: #f0f5ff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .skill-item {
+            margin-bottom: 5px;
+        }
+        
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .interest-tag {
+            background: #4a6491;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 14px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #ccc;
+            color: #666;
+        }
+        
+        @media (max-width: 600px) {
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .item-header {
+                flex-direction: column;
+            }
+            
+            .skill-category {
+                min-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Товч танилцуулга</h1>
-    <p>Миний нэрийг Хишигжаргал гэдэг. Монгол Улсын Их Сургуульд Компьютерын ухаан чиглэлээр 4 дэх жилдээ суралцаж байна.</p>
+    <div class="container">
+        <header>
+            <h1>Гантулга Хишигжаргал</h1>
+            <div class="title">Монгол Улсын Их Сургуулийн оюутан</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span></span> ghishigiargal1996@gmail.com
+                </div>
+                <div class="contact-item">
+                    <span></span> 9099-1441, 9009-4014
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <h2>Миний Тухай</h2>
+            <p>Монгол Улсын Их Сургуульд Компьютерын ухаан чиглэлээр 4 дэх жилдээ суралцаж байгаа бөгөөд цаашдаа өгөгдлийн шинжлэх ухаанч болох зорилготой. Хиймэл оюун ухаан, машин сургалтын чиглэлээр гүнзгийрүүлэн судлах сонирхолтой.</p>
+        </section>
+
+        <section>
+            <h2>Боловсрол</h2>
+            <div class="education">
+                <div class="item-header">
+                    <div class="item-title">Бакалавр, Компьютерын ухаан</div>
+                    <div class="item-date">2022 - Одоо</div>
+                </div>
+                <div class="item-org">Монгол Улсын Их Сургууль</div>
+                <p>4-р курс, Компьютерын ухаан чиглэлээр суралцаж байна.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Туршлага</h2>
+            <div class="experience">
+                <div class="item-header">
+                    <div class="item-title">Дадлагажигч</div>
+                    <div class="item-date">2025/7 - 2025/8</div>
+                </div>
+                <div class="item-org">Mobilife, Улаанбаатар</div>
+                <p>RAG технологид суурилсан байгууллагын мэдлэтийн сангаас ишлэлтэй хариу өгөх чатбот хийсэн.</p>
+            </div>
+            
+            <div class="experience">
+                <div class="item-header">
+                    <div class="item-title">IT Багш</div>
+                    <div class="item-date">2025/2 - Одоо</div>
+                </div>
+                <div class="item-org">Tee education school, Улаанбаатар</div>
+                <p>Сурагчдад мэдээллийн технологийн үндсэн мэдлэг олгож, програмчлалын хичээлүүдийг заасан.</p>
+                <ul>
+                    <li>Компьютерын хичээлүүд болон 3D printing, robotic-ын хичээлүүдийг заасан</li>
+                    <li>Сурагчдын мэдлэгийг үнэлсэн</li>
+                    <li>Хичээлийн хөтөлбөр боловсруулсан</li>
+                </ul>
+            </div>
+            
+            <div class="experience">
+                <div class="item-header">
+                    <div class="item-title">Дадлагажигч, аялалын хөтөч</div>
+                    <div class="item-date">2024/06 - 2024/09</div>
+                </div>
+                <div class="item-org">Leisure Trips Mongolia, Улаанбаатар</div>
+                <p>Аялал жуулчлалын компанид зуны амралтаараа ажилласан.</p>
+                <ul>
+                    <li>Хөтөлбөр сургалт явуулах, boost хийх</li>
+                    <li>Жуулчдад хөтөч хийх</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Шагналууд</h2>
+            <div class="award">
+                <div class="item-header">
+                    <div class="item-title">Тэтгэлэг хүртсэн</div>
+                    <div class="item-date">2024</div>
+                </div>
+                <div class="item-org">Монголын Анагаахын Хиймэл Оюун Ухааны Холбоо</div>
+                <p>Хиймэл оюун ухаан, өгөгдлийн шинжлэх ухааны чиглэлээр гүнзгийрүүлэн судлахад шаардлагатай хичээлүүдээр хангасан.</p>
+            </div>
+            
+            <div class="award">
+                <div class="item-header">
+                    <div class="item-title">Спортын мастер</div>
+                    <div class="item-date">2024</div>
+                </div>
+                <div class="item-org">Монголын Гимнастикийн Холбоо</div>
+                <p>Аэробик гимнастикийн спортын мастер цолыг хүртсэн. 2015 оноос хойш тууштай бэлтгэл хийж, олон улсын болон улсын түвшний тэмцээнүүдэд амжилттай оролцсон үр дүн.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Чадварууд</h2>
+            <div class="skills">
+                <div class="skill-category">
+                    <h3>Техникийн</h3>
+                    <div class="skill-item">C/C++</div>
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">SQL</div>
+                    <div class="skill-item">Arduino</div>
+                    <div class="skill-item">PowerBI</div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Хэлний</h3>
+                    <div class="skill-item">Англи хэл</div>
+                    <div class="skill-item">Герман хэл (Анхан шат)</div>
+                    <div class="skill-item">Япон хэл (Анхан шат)</div>
+                </div>
+            </div>
+        
+        </section>
+
+        <footer>
+            <p>Интернет технологийн үндэс (Lab-1)</p>
+        </footer>
+    </div>
 </body>
-</html> 
+</html>
