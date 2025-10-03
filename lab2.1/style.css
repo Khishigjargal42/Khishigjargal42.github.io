@@ -1,0 +1,655 @@
+/* Ерөнхий загвар - General style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Pure Off-White for main background */
+    background: #fcfcfc; 
+    /* Deep Charcoal for main text */
+    color: #2d3a3a; 
+    line-height: 1.6; 
+}
+
+/* Толгой хэсэг - Header */
+.header {
+    /* Muted Sage Green for the background */
+    background: #679186; 
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    /* Subtler shadow */
+    box-shadow: 0 1px 3px rgba(45, 58, 58, 0.15); 
+}
+
+.header h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-size: 2.0em; 
+    margin-bottom: 8px; 
+    text-shadow: none; 
+    font-weight: 600; 
+}
+
+.header p {
+    font-size: 1.1em; 
+    opacity: 1; 
+    font-weight: 300;
+    letter-spacing: normal; 
+}
+
+/* Навигацийн цэс - Sidebar */
+.sidebar {
+    /* Deep Charcoal for dark sidebar */
+    background: #2d3a3a; 
+    padding: 0;
+    /* Subtler shadow */
+    box-shadow: 1px 0 3px rgba(0,0,0,0.1); 
+}
+
+.nav-item {
+    /* Subtle divider */
+    border-bottom: 1px solid rgba(255,255,255,0.05); 
+    transition: background-color 0.2s ease;
+}
+
+.nav-item:hover {
+    /* Very subtle hover */
+    background-color: rgba(232, 232, 228, 0.05); 
+}
+
+.nav-item a {
+    color: #fcfcfc; /* Off-White text */
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px; 
+    transition: all 0.2s ease;
+    font-weight: 400; 
+    letter-spacing: 0; 
+}
+
+.nav-item a:hover {
+    /* Slight background change on hover */
+    background-color: rgba(122, 147, 106, 0.2); 
+    padding-left: 20px; 
+    color: #fff;
+}
+
+.nav-item.active {
+    /* Muted Sage Green for active state */
+    background: #679186; 
+    /* Soft Pale Gray for cleaner active border */
+    border-left: 3px solid #e8e8e4; 
+}
+
+.nav-item.active a {
+    font-weight: 500;
+    color: #fff;
+}
+
+/* Контент хэсэг - Content */
+.content {
+    /* Off-White for content background */
+    background-color: #fcfcfc; 
+    padding: 0;
+    min-height: 600px;
+    box-shadow: none; 
+}
+
+.content > table > tbody > tr > td {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    /* Muted Sage Green */
+    color: #679186; 
+    margin-bottom: 15px; 
+    font-size: 2em; 
+    /* Soft Pale Gray for subtle divider */
+    border-bottom: 2px solid #e8e8e4; 
+    padding-bottom: 8px; 
+    font-weight: 600;
+    text-transform: none; 
+    letter-spacing: 0; 
+}
+
+.content h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    /* Deep Charcoal for secondary headers */
+    color: #2d3a3a; 
+    margin-top: 20px; 
+    margin-bottom: 10px; 
+    font-size: 1.4em; 
+    font-weight: 500;
+}
+
+.content h4 {
+    /* Deep Charcoal */
+    color: #2d3a3a; 
+    margin-bottom: 8px; 
+    font-size: 1.1em; 
+    font-weight: 500;
+}
+
+.content p {
+    margin-bottom: 15px;
+    text-align: left; 
+    font-size: 1em; 
+    /* Deep Charcoal for body copy */
+    color: #2d3a3a; 
+    line-height: 1.6;
+}
+
+.content hr {
+    margin: 25px 0; 
+    border: none;
+    /* Soft Pale Gray divider */
+    border-top: 1px solid #e8e8e4; 
+}
+
+.content ul {
+    color: #2d3a3a;
+}
+
+.content ul li {
+    line-height: 1.6;
+}
+
+/* Хөл хэсэг - Footer */
+.footer {
+    /* Deep Charcoal for dark footer */
+    background: #2d3a3a; 
+    color: white;
+    text-align: center;
+    padding: 10px 10px; 
+    font-size: 0.9em; 
+    /* Subtler shadow */
+    box-shadow: 0 -1px 3px rgba(0,0,0,0.1); 
+    font-weight: 300;
+    letter-spacing: normal; 
+}
+
+/* Цитат хэсэг - Quote */
+.quote {
+    /* Soft Pale Gray subtle background */
+    background: #e8e8e4; 
+    /* Muted Sage Green border */
+    border-left: 3px solid #679186; 
+    padding: 20px 25px; 
+    margin-top: 25px; 
+    font-style: italic;
+    color: #2d3a3a; 
+    border-radius: 4px; 
+    /* Subtler shadow */
+    box-shadow: 0 1px 4px rgba(45, 58, 58, 0.05); 
+    font-size: 1em; 
+}
+
+/* Нүүр хуудасны welcome хэсэг - Welcome Section */
+.welcome-table {
+    margin-top: 20px; 
+}
+
+.welcome-box {
+    /* Off-White background */
+    background: #fcfcfc; 
+    border-radius: 8px; 
+    /* Muted Sage Green border */
+    border-left: 3px solid #679186; 
+    padding: 18px 20px; 
+    /* Subtler shadow */
+    box-shadow: 0 1px 5px rgba(45, 58, 58, 0.05); 
+    transition: all 0.2s ease;
+}
+
+.welcome-box:hover {
+    transform: none; 
+    /* Muted Sage Green shadow */
+    box-shadow: 0 2px 8px rgba(122, 147, 106, 0.1); 
+}
+
+.welcome-box h3 {
+    /* Muted Sage Green text */
+    color: #679186; 
+    margin-top: 0;
+    font-size: 1.4em; 
+}
+
+/* Миний тухай хуудас - About Me Page */
+.profile-photo {
+    width: 130px; 
+    height: 130px; 
+    /* Muted Sage Green background */
+    background: #679186; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em; 
+    margin: 0 auto;
+    /* Off-White border */
+    border: 3px solid #fcfcfc; 
+    /* Subtler shadow */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+}
+
+.info-table {
+    margin-top: 20px; 
+}
+
+.info-box {
+    /* Off-White background */
+    background: #fcfcfc; 
+    border-radius: 8px;
+    /* Deep Charcoal border */
+    border-left: 3px solid #2d3a3a; 
+    padding: 18px 20px; 
+    /* Subtler shadow */
+    box-shadow: 0 1px 5px rgba(45, 58, 58, 0.05); 
+    transition: all 0.2s ease;
+}
+
+.info-box:hover {
+    transform: none; 
+    /* Deep Charcoal shadow */
+    box-shadow: 0 2px 8px rgba(45, 58, 58, 0.1); 
+}
+
+.info-box h4 {
+    /* Deep Charcoal text */
+    color: #2d3a3a; 
+    margin-top: 0;
+    font-size: 1.2em; 
+}
+
+.info-box ul {
+    margin-left: 15px; 
+    margin-top: 8px; 
+}
+
+.info-box ul li {
+    margin-bottom: 8px; 
+    color: #2d3a3a;
+}
+
+/* Гэр бүлийн хуудас - Family Page */
+.family-card {
+    /* Off-White background */
+    background: #fcfcfc; 
+    border-radius: 8px; 
+    /* Soft Pale Gray border */
+    border: 1px solid #e8e8e4; 
+    transition: all 0.2s ease;
+    /* Subtler shadow */
+    box-shadow: 0 1px 5px rgba(45, 58, 58, 0.05); 
+}
+
+.family-card:hover {
+    /* Muted Sage Green shadow */
+    box-shadow: 0 2px 8px rgba(122, 147, 106, 0.1); 
+    /* Muted Sage Green border */
+    border-color: #679186; 
+    transform: none; 
+}
+
+.family-photo {
+    width: 80px; 
+    height: 80px; 
+    /* Muted Sage Green background */
+    background: #679186; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em; 
+    margin: 0 auto;
+    /* Off-White border */
+    border: 3px solid #fcfcfc; 
+    /* Subtler shadow */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+}
+
+.family-card h3 {
+    /* Muted Sage Green text */
+    color: #679186; 
+    margin-top: 0;
+    margin-bottom: 10px; 
+    font-size: 1.4em; 
+}
+
+.family-card p {
+    color: #2d3a3a;
+}
+
+/* Найзуудын хуудас - Friends Page */
+.friend-card {
+    /* Off-White background */
+    background: #fcfcfc; 
+    border-radius: 8px;
+    /* Soft Pale Gray border */
+    border: 1px solid #e8e8e4; 
+    height: 100%;
+    transition: all 0.2s ease;
+    /* Subtler shadow */
+    box-shadow: 0 1px 5px rgba(45, 58, 58, 0.05); 
+}
+
+.friend-card:hover {
+    /* Muted Sage Green shadow */
+    box-shadow: 0 2px 8px rgba(122, 147, 106, 0.1); 
+    /* Muted Sage Green border */
+    border-color: #679186; 
+    transform: none; 
+}
+
+/* Дугуй зураг (хуучин загвар) - Round photo (old style) */
+.friend-photo {
+    width: 100px; 
+    height: 100px; 
+    /* Muted Sage Green background */
+    background: #679186; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em; 
+    margin: 0 auto 10px auto; 
+    /* Off-White border */
+    border: 3px solid #fcfcfc; 
+    /* Subtler shadow */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+}
+
+/* Тэгш өнцөгт зураг (шинэ загвар) - Rectangle photo (new style) */
+.friend-photo-rect {
+    width: 200px;
+    height: 200px;
+    /* Soft Pale Gray background */
+    background: #e8e8e4;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+    /* Off-White border */
+    border: 3px solid #fcfcfc;
+    /* Subtler shadow */
+    box-shadow: 0 2px 8px rgba(45, 58, 58, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Зургийн элемент - Image element */
+.friend-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Зураг байхгүй үед emoji харуулах - Show emoji when no image */
+.friend-placeholder {
+    font-size: 4em;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Зураг байгаа үед emoji нуух - Hide emoji when image exists */
+.friend-photo-rect:has(img[src]:not([src=""])) .friend-placeholder {
+    display: none;
+}
+
+.friend-card h3 {
+    /* Muted Sage Green text */
+    color: #679186; 
+    margin-bottom: 10px; 
+    text-align: center;
+    font-size: 1.3em; 
+}
+
+.friend-card p {
+    color: #2d3a3a;
+}
+
+/* Холбоо барих хуудас - Contact Page */
+.contact-info {
+    /* Off-White background */
+    background: #fcfcfc; 
+    border-radius: 8px;
+    margin-bottom: 25px; 
+    /* Subtler shadow */
+    box-shadow: 0 1px 5px rgba(45, 58, 58, 0.05); 
+}
+
+.contact-info tr {
+    /* Soft Pale Gray divider */
+    border-bottom: 1px solid #e8e8e4; 
+    transition: all 0.2s ease;
+}
+
+.contact-info tr:hover {
+    /* Very subtle hover effect using Soft Pale Gray */
+    background-color: #e8e8e4; 
+}
+
+.contact-info tr:last-child {
+    border-bottom: none;
+}
+
+.contact-icon {
+    font-size: 1.8em; 
+}
+
+.contact-info h4 {
+    margin: 0 0 4px 0; 
+    /* Muted Sage Green */
+    color: #679186; 
+    font-size: 1.1em; 
+}
+
+.contact-info p {
+    margin: 0;
+    color: #2d3a3a;
+    font-size: 1em; 
+}
+
+/* Холбоо барих форм - Contact Form */
+.contact-form {
+    /* Off-White background */
+    background: #fcfcfc; 
+    border-radius: 8px;
+    padding: 20px; 
+    /* Subtler shadow */
+    box-shadow: 0 1px 5px rgba(45, 58, 58, 0.05); 
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 12px; 
+    /* Soft Pale Gray border */
+    border: 1px solid #e8e8e4; 
+    border-radius: 4px; 
+    font-size: 1em; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.2s ease;
+    margin-top: 6px; 
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    /* Muted Sage Green focus border */
+    border-color: #679186; 
+    box-shadow: none; 
+}
+
+.form-textarea {
+    resize: vertical;
+}
+
+.form-button {
+    /* Muted Sage Green button */
+    background: #679186; 
+    color: white;
+    padding: 12px 30px; 
+    border: none;
+    border-radius: 4px; 
+    font-size: 1.1em; 
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: normal; 
+    /* Subtler shadow */
+    box-shadow: 0 2px 5px rgba(45, 58, 58, 0.2); 
+}
+
+.form-button:hover {
+    transform: none; 
+    /* Slightly darker Sage Green on hover */
+    background: #5a7a6f; 
+    box-shadow: 0 3px 8px rgba(45, 58, 58, 0.3); 
+}
+
+.form-button:active {
+    transform: none;
+}
+
+/* Responsive дизайн - Responsive Design */
+@media screen and (max-width: 768px) {
+    /* Толгой */
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    .header p {
+        font-size: 1em;
+    }
+    
+    /* Sidebar болон Content-г stack хийх */
+    .sidebar,
+    .content {
+        display: block;
+        width: 100% !important;
+    }
+    
+    /* Навигаци цэсийг horizontal болгох */
+    .sidebar table {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-item {
+        display: inline-block;
+        border-bottom: none;
+        /* Lighter divider for horizontal nav */
+        border-right: 1px solid rgba(255,255,255,0.05); 
+    }
+    
+    .nav-item a {
+        padding: 12px 15px; 
+        font-size: 0.9em;
+    }
+    
+    .nav-item a:hover {
+        padding-left: 15px; 
+    }
+    
+    /* Контент */
+    .content h2 {
+        font-size: 1.6em;
+    }
+    
+    .content h3 {
+        font-size: 1.3em;
+    }
+    
+    .content p {
+        font-size: 1em;
+    }
+    
+    /* Найзуудын карт */
+    .friend-card {
+        margin-bottom: 15px;
+    }
+    
+    /* Profile зураг */
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+        font-size: 3em;
+    }
+    
+    /* Family photo */
+    .family-photo {
+        width: 70px;
+        height: 70px;
+        font-size: 2.5em;
+    }
+    
+    /* Friend photo */
+    .friend-photo {
+        width: 120px;
+        height: 90px;
+        font-size: 2.8em;
+    }
+    
+    /* Friend rectangle photo - responsive */
+    .friend-photo-rect {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .friend-placeholder {
+        font-size: 3em;
+    }
+    
+    /* Padding багасгах */
+    .content table td {
+        padding: 15px !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        padding: 25px 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.6em;
+    }
+    
+    .nav-item a {
+        padding: 10px 12px; 
+        font-size: 0.8em; 
+    }
+    
+    .content h2 {
+        font-size: 1.4em;
+    }
+    
+    .welcome-box,
+    .info-box,
+    .family-card,
+    .friend-card {
+        padding: 15px !important;
+    }
+    
+    /* Friend rectangle photo - mobile */
+    .friend-photo-rect {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .friend-placeholder {
+        font-size: 2.5em;
+    }
+}
