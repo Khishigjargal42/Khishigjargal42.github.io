@@ -1,0 +1,155 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  background-color: #e9ebee;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.header {
+  background-color: #3b5998;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.user {
+  font-weight: bold;
+}
+
+/* Profile title */
+.profile-title {
+  background-color: #4b6ea8;
+  color: white;
+  padding: 6px 10px;
+  font-weight: bold;
+}
+
+/* Main layout table */
+table.main {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+td {
+  vertical-align: top;
+  padding: 10px;
+}
+
+/* Left column */
+.left {
+  width: 170px;
+  background-color: #f8f8f8;
+  border-right: 1px solid #ccc;
+}
+
+.search-box {
+  border: 1px solid #ccc;
+  padding: 5px;
+  background-color: white;
+}
+
+.search-title {
+  font-weight: bold;
+  font-size: 11px;
+  margin-bottom: 4px;
+  text-transform: lowercase;
+}
+
+.search-box input {
+  width: 100px;
+  font-size: 11px;
+}
+
+.search-box button {
+  font-size: 11px;
+}
+
+.links {
+  border: 1px dotted #ccc;
+  padding: 6px;
+  margin-top: 10px;
+}
+
+.links a {
+  display: block;
+  color: #3b5998;
+  text-decoration: none;
+  margin-bottom: 4px;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Center column */
+.center {
+  width: 400px;
+  border-right: 1px solid #ccc;
+}
+
+.section {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  background-color: #d8e3f0;
+  font-weight: bold;
+  padding: 4px 6px;
+  border-bottom: 1px solid #ccc;
+}
+
+.edit {
+  float: right;
+  color: #3b5998;
+  font-weight: normal;
+}
+
+.photo-box {
+  height: 200px;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 12px;
+}
+
+.section-content {
+  padding: 6px;
+  font-size: 12px;
+}
+
+/* Right column */
+.right {
+  width: 300px;
+}
+
+/* Footer */
+.footer {
+  background-color: #3b5998;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  margin-top: 10px;
+}
