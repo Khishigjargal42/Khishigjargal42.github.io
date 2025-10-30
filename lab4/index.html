@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab-4 CV</title>
+    <style>
+        body {
+            background-image: url('background.png');
+            background-repeat: repeat;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+}
+        
+        /* container heseg */
+        .main-container {
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #F0F0F0;
+            border: 0px;
+            box-shadow: 0px 0px 30px rgba(0,0,0,0.5);
+        }
+        
+        /* Deed taliin pattern */
+        .top-pattern {
+            height: 30px;
+            background-color: #CBF1F5;
+            background-image: url('pattern.png');
+            background-repeat: repeat-x;
+            background-size: auto 30px;
+            border-bottom: 2px solid #11324D;
+        }
+        
+        /* header */
+        .header {
+            background-color: #79A3B1;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 2px solid #11324D;
+        }
+        
+        /* profile */
+        .photo-box {
+            width: 150px;
+            height: 150px;
+            border: 5px solid #11324D;
+            border-radius: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            background-color: white;
+            overflow: hidden;
+        }
+        
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: #e0e0e0;
+            display: table;
+        }
+        
+        .photo-placeholder p {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            color: #666;
+        }
+        
+        .name {
+            color: #11324D;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        /*kimo name*/
+        .kimo-name {
+            position: absolute;
+            top: 165px;
+            left: 380px;
+        }
+
+        /*bulan1*/
+        .bulan1 {
+            position: absolute;
+            top: 70px;
+            left: 320px;
+        }
+
+        /*bulan2*/
+        .bulan2 {
+            position: absolute;
+            top: 70px;
+            right: 320px;
+        }
+
+        /*bulan3*/
+        .bulan3 {
+            position: absolute;
+            top: 360px;
+            right: 320px;
+        }
+
+        /*bulan4*/
+        .bulan4 {
+            position: absolute;
+            top: 360px;
+            left: 320px;
+        }
+
+        /* Албан тушаал */
+        .job-title {
+            color: #006A67;;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        /* Холбоо барих мэдээлэл */
+        .contact-box {
+            background-color: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        
+        .contact-item {
+            color: #11324D;
+            margin: 5px 20px;
+            display: inline-block;
+        }
+        
+        /* Үндсэн агуулга */
+        .content {
+            padding: 40px;
+        }
+        
+        /* Хэсэг бүрийн гарчиг */
+        .section-title {
+            color: #363062;
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 4px solid#11324D;
+        }
+        
+        /* Монгол хээний тэмдэг */
+        .section-title::before {
+            content: '◆ ';
+            color: #1a4d8f;
+            font-size: 24px;
+        }
+        
+        /* Миний тухай текст */
+        .about-text {
+            background-color: white;
+            padding: 20px;
+            border-left: 5px solid #1a4d8f;
+            border-radius: 5px;
+            line-height: 1.8;
+        }
+        
+        /* Туршлага, боловсрол, шагналын хайрцаг */
+        .item-box {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 8px solid #1a4d8f;
+            border-radius: 5px;
+            box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Гарчиг болон огнооны хэсэг */
+        .item-header {
+            margin-bottom: 10px;
+        }
+        
+        .item-header table {
+            width: 100%;
+        }
+        
+        .item-title {
+            color: #1a4d8f;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .item-date {
+            color: #1a4d8f;
+            font-weight: bold;
+            text-align: right;
+            font-style: italic;
+        }
+        
+        /* Байгууллагын нэр */
+        .item-org {
+            color: #006A67;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        /* Тайлбар текст */
+        .item-desc {
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Жагсаалт */
+        .item-list {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        
+        .item-list li {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        /* Чадварын хэсэг - Хүснэгт ашиглах */
+        .skills-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 15px;
+        }
+        
+        .skill-box {
+            background-color: white;
+            padding: 20px;
+            border: 3px solid #1a4d8f;
+            border-radius: 10px;
+            vertical-align: top;
+        }
+        
+        .skill-category-title {
+            color: #006A67;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .skill-item {
+            padding: 8px;
+            margin: 5px 0;
+            background-color: #f5f5f5;
+            border-left: 3px solid#11324D;
+            color: #333;
+        }
+        
+        /* Доод хэсгийн монгол хээ */
+        .bottom-pattern {
+            height: 30px;
+            background-color: #CBF1F5;
+            background-image: url('pattern.png');
+            background-repeat: repeat-x;
+            background-size: auto 30px;
+            border-top: 2px solid#11324D;
+            border-bottom: 2px solid#11324D;
+        }
+        
+        .footer {
+            background-color: #79A3B1;
+            color: #11324D;
+            text-align: center;
+            padding: 20px;
+            font-weight: bold;
+        }
+        
+        .mongolian-accent {
+            color: #1a4d8f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="top-pattern"></div>
+            <div class="header">
+            
+            <div class="photo-box">
+                <img src="profile.jpg" alt="Профайл зураг">
+            </div>
+            
+            <div class="name">Гантулга Хишигжаргал</div>
+
+            <!--kimo name-->
+            <div class="kimo-name">
+                <img src="kimo.png" alt="Kimo Logo" width="80" height="200" style="vertical-align: left;">
+            </div>
+            <!--bulan1-->
+            <div class="bulan1">
+                <img src="bulan1.png" alt="Bulan1 Logo" width="100" height="100" style="vertical-align: left;">
+            </div>
+
+            <div class="bulan2">
+                <img src="bulan2.png" alt="Bulan2 Logo" width="100" height="100" style="vertical-align: right;">
+            </div>
+
+            <div class="bulan3">
+                <img src="bulan3.png" alt="Bulan3 Logo" width="100" height="100" style="vertical-align: right;">
+            </div>
+
+            <div class="bulan4">
+                <img src="bulan4.png" alt="Bulan4 Logo" width="100" height="100" style="vertical-align: left;">
+            </div>
+
+            <div class="job-title">Монгол Улсын Их Сургуулийн оюутан</div>
+            
+            <div class="contact-box">
+                <div class="contact-item">✉ ghishigiargal1996@gmail.com</div>
+                <div class="contact-item">☎ 9099-1441, 9009-4014</div>
+            </div>
+            
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            
+            <!-- МИНИЙ ТУХАЙ хэсэг -->
+            <div class="section-title">Миний Тухай</div>
+            <div class="about-text">
+                Монгол Улсын Их Сургуульд Компьютерын ухаан чиглэлээр 4 дэх жилдээ суралцаж байгаа бөгөөд цаашдаа өгөгдлийн шинжлэх ухаанч болох зорилготой. Хиймэл оюун ухаан, машин сургалтын чиглэлээр гүнзгийрүүлэн судлах сонирхолтой.
+            </div>
+            
+            
+            <!-- БОЛОВСРОЛ хэсэг -->
+            <div class="section-title">Боловсрол</div>
+            
+            <div class="item-box">
+                <div class="item-header">
+                    <table>
+                        <tr>
+                            <td class="item-title">Бакалавр, Компьютерын ухаан</td>
+                            <td class="item-date">2022 - Одоо</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item-org">Монгол Улсын Их Сургууль</div>
+                <div class="item-desc">
+                    4-р курс, Компьютерын ухаан чиглэлээр суралцаж байна.
+                </div>
+            </div>
+            
+            
+            <!-- ТУРШЛАГА хэсэг -->
+            <div class="section-title">Туршлага</div>
+            
+            <!-- Туршлага 1 -->
+            <div class="item-box">
+                <div class="item-header">
+                    <table>
+                        <tr>
+                            <td class="item-title">Дадлагажигч</td>
+                            <td class="item-date">2025/7 - 2025/8</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item-org">Mobilife, Улаанбаатар</div>
+                <div class="item-desc">
+                    RAG технологид суурилсан байгууллагын мэдлэтийн сангаас ишлэлтэй хариу өгөх чатбот хийсэн.
+                </div>
+            </div>
+            
+            <!-- Туршлага 2 -->
+            <div class="item-box">
+                <div class="item-header">
+                    <table>
+                        <tr>
+                            <td class="item-title">IT Багш</td>
+                            <td class="item-date">2025/2 - Одоо</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item-org">Tee education school, Улаанбаатар</div>
+                <div class="item-desc">
+                    Сурагчдад мэдээллийн технологийн үндсэн мэдлэг олгож, програмчлалын хичээлүүдийг заасан.
+                </div>
+                <ul class="item-list">
+                    <li>Компьютерын хичээлүүд болон 3D printing, robotic-ын хичээлүүдийг заасан</li>
+                    <li>Сурагчдын мэдлэгийг үнэлсэн</li>
+                    <li>Хичээлийн хөтөлбөр боловсруулсан</li>
+                </ul>
+            </div>
+            
+            <!-- Туршлага 3 -->
+            <div class="item-box">
+                <div class="item-header">
+                    <table>
+                        <tr>
+                            <td class="item-title">Дадлагажигч, аялалын хөтөч</td>
+                            <td class="item-date">2024/06 - 2024/09</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item-org">Leisure Trips Mongolia, Улаанбаатар</div>
+                <div class="item-desc">
+                    Аялал жуулчлалын компанид зуны амралтаараа ажилласан.
+                </div>
+                <ul class="item-list">
+                    <li>Хөтөлбөр сургалт явуулах, boost хийх</li>
+                    <li>Жуулчдад хөтөч хийх</li>
+                </ul>
+            </div>
+            
+            
+            <!-- ШАГНАЛУУД хэсэг -->
+            <div class="section-title">Шагналууд</div>
+            
+            <!-- Шагнал 1 -->
+            <div class="item-box">
+                <div class="item-header">
+                    <table>
+                        <tr>
+                            <td class="item-title">Тэтгэлэг хүртсэн</td>
+                            <td class="item-date">2024</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item-org">Монголын Анагаахын Хиймэл Оюун Ухааны Холбоо</div>
+                <div class="item-desc">
+                    Хиймэл оюун ухаан, өгөгдлийн шинжлэх ухааны чиглэлээр гүнзгийрүүлэн судлахад шаардлагатай хичээлүүдээр хангасан.
+                </div>
+            </div>
+            
+            <!-- Шагнал 2 -->
+            <div class="item-box">
+                <div class="item-header">
+                    <table>
+                        <tr>
+                            <td class="item-title">Спортын мастер</td>
+                            <td class="item-date">2024</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item-org">Монголын Гимнастикийн Холбоо</div>
+                <div class="item-desc">
+                    Аэробик гимнастикийн спортын мастер цолыг хүртсэн. 2015 оноос хойш тууштай бэлтгэл хийж, олон улсын болон улсын түвшний тэмцээнүүдэд амжилттай оролцсон үр дүн.
+                </div>
+            </div>
+            
+            
+            <!-- ЧАДВАРУУД хэсэг -->
+            <div class="section-title">Чадварууд</div>
+            
+            <!-- Чадваруудыг хүснэгтээр харуулах -->
+            <table class="skills-table">
+                <tr>
+                    <!-- Техникийн чадвар -->
+                    <td class="skill-box">
+                        <div class="skill-category-title">Техникийн</div>
+                        <div class="skill-item">C/C++</div>
+                        <div class="skill-item">Python</div>
+                        <div class="skill-item">SQL</div>
+                        <div class="skill-item">Arduino</div>
+                        <div class="skill-item">PowerBI</div>
+                    </td>
+                    
+                    <!-- Хэлний чадвар -->
+                    <td class="skill-box">
+                        <div class="skill-category-title">Хэлний</div>
+                        <div class="skill-item">Англи хэл</div>
+                        <div class="skill-item">Герман хэл (Анхан шат)</div>
+                        <div class="skill-item">Япон хэл (Анхан шат)</div>
+                    </td>
+                </tr>
+            </table>
+            
+        </div>
+        <!-- Үндсэн агуулга төгсгөл -->
+        
+        
+        <!-- Доод хэсгийн хээ -->
+        <div class="bottom-pattern"></div>
+        
+        <!-- Хөл хэсэг -->
+        <div class="footer">
+            Интернет технологийн үндэс (Lab-4)
+        </div>
+        
+    </div>
+    <!-- Гол хайрцаг төгсгөл -->
+
+</body>
+</html>
