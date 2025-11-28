@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Бодлого 1–5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #b3ccff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #1f2937;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #111827;
+            font-size: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.1);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+        }
+
+        .result-area {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #e5e7eb;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .hint {
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Лаборатори №7</h1>
+
+    <div class="card">
+        <h2>Бодлого 1: Цифрүүдийн нийлбэр палиндром эсэхийг шалгах</h2>
+        <p class="hint">бүхэл тоо оруулах хэрэгтэй</p>
+        <div class="result-area">
+            <script>
+                var n = prompt("Бодлого 1 (палиндром эсэх) - тоо оруулна уу:");
+
+                if (!n) {
+                    document.write("Утга хоосон байна!<br>");
+                } 
+                else {
+                    n = n.replace(/[^0-9]/g, "");   //0-9 hoorond tsifr bolgono
+                    var sum = 0;
+
+                    for (var i = 0; i < n.length; i++) {
+                        sum += Number(n[i]);
+                    }
+
+                    var s = String(sum);
+                    var pal = 1;
+
+                    for (var i = 0; i < s.length / 2; i++) {
+                        if (s[i] !== s[s.length - 1 - i]) {
+                            pal = 0;
+                        }
+                    }
+
+                    document.write("Цифрүүдийн нийлбэр = " + sum + "<br>");
+
+                    if (pal === 1)
+                        document.write("Палиндром мөн<br><br>");
+                    else
+                        document.write("Палиндром биш<br><br>");
+                }
+            </script>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Бодлого 2: Чоно туулайг хэзээ гүйцэх вэ?</h2>
+        <p class="hint">Чоно, туулай хоёрын хоорондын зайг (км) оруулаарай.</p>
+        <div class="result-area">
+            <script>
+                var wolf = 25;
+                var tuulai = 18;
+                var distance = prompt("Бодлого 2 - Чоно, туулай хоёрын хоорондын зайг (км) оруулна уу:");
+
+                if (!distance) {
+                    document.write("Утга хоосон байна!");
+                } 
+                else {
+                    distance = Number(distance);
+
+                    if (isNaN(distance) || distance <= 0) {
+                        document.write("Зайг зөв (эерэг тоо) оруулна уу!");
+                    } else {
+                        var relSpeed = wolf - tuulai;  
+                        var timeHours = distance / relSpeed;
+                        var totalSeconds = timeHours * 3600;
+
+                        var minutes = Math.floor(totalSeconds / 60);
+                        var seconds = Math.round(totalSeconds - minutes * 60);
+
+                        document.write("Зай = " + distance + " км<br>");
+                        document.write("Чоны хурд = " + wolf + " км/ц<br>");
+                        document.write("Туулайны хурд = " + tuulai + " км/ц<br>");
+                        document.write("Харьцангуй хурд = " + relSpeed + " км/ц<br><br>");
+
+                        document.write("Чоно туулайг " + minutes + " минут " + seconds + " секундын дараа гүйцнэ.");
+                    }
+                }
+            </script>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Бодлого 3: Тоотоос орц, давхар, хаалгыг олох</h2>
+        <p class="hint">1–108 хооронд тоот оруулна.</p>
+        <div class="result-area">
+            <script>
+                var floors = 9;      // davhariin too
+                var entrances = 3;   // ortsnii too
+                var perFloor = 4;    // neg davhart baih ailiin too
+
+                var perEntrance = floors * perFloor; // 36 ail neg ortsond baigaa
+
+                var apt = prompt("Бодлого 3 (орц давхар) - Тоотыг оруулна уу (1–" + (perEntrance * entrances) + "):");
+
+                if (!apt) {
+                    document.write("Утга хоосон байна!");
+                } else {
+                    apt = Number(apt);
+
+                    if (isNaN(apt) || apt < 1 || apt > perEntrance * entrances) {
+                        document.write("Тоот нь 1–" + (perEntrance * entrances) + " хооронд байх ёстой!");
+                    } else {
+                        // 1-р орцонд 1-36, 2-р орцонд 37-72, 3-р орцонд 73-108
+                        var entrance = Math.ceil(apt / perEntrance);
+
+                        // Орц доторх индекс
+                        var indexInsideEntrance = (apt - 1) % perEntrance;  // 0 .. 35
+
+                        // Давхар олох (нэг давхарт 4 айл)
+                        var floor = Math.floor(indexInsideEntrance / perFloor) + 1;
+
+                        // Хаалганы дугаар олох
+                        var door = (indexInsideEntrance % perFloor) + 1;
+
+                        document.write("Оруулсан тоот: " + apt + "<br>");
+                        document.write("Нэг орцонд " + perEntrance + " айл байна.<br><br>");
+
+                        document.write(
+                            apt + "-р тоот нь " +
+                            entrance + "-р орцны " +
+                            floor + "-р давхрын " +
+                            door + "-р хаалга байна."
+                        );
+                    }
+                }
+            </script>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Бодлого 4: Array-д өгөгдсөн 5 тооны хамгийн их ерөнхий хуваагч</h2>
+        <p class="hint">Зайгаар тусгаарласан 5 бүхэл тоо оруул: (жишээ: 12 18 24 30 6)</p>
+        <div class="result-area">
+            <script>
+                function max(a, b) {
+                    a = Math.abs(a);
+                    b = Math.abs(b);
+                    while (b !== 0) {
+                        var t = b;
+                        b = a % b;
+                        a = t;
+                    }
+                    return a;
+                }
+
+                var input = prompt("Бодлого 4 (ХИЕХ) - Зайгаар тусгаарласан 5 тоо оруул: (Ж: 12 18 24 30 6)");
+
+                if (!input) {
+                    document.write("Утга хоосон байна!");
+                } else {
+                    var arr = input.split(" ").map(function(x){
+                        return Number(x.trim());
+                    });
+
+                    if (arr.length !== 5 || arr.some(isNaN)) {
+                        document.write("Яг 5 ширхэг бүхэл тоо оруулна уу!");
+                    } else {
+                        var g = arr[0];
+
+                        for (var i = 1; i < arr.length; i++) {
+                            g = max(g, arr[i]);
+                        }
+
+                        document.write("Оруулсан тоонууд: " + arr.join(", ") + "<br>");
+                        document.write("Хамгийн их ерөнхий хуваагч (max) = " + g);
+                    }
+                }
+            </script>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Бодлого 5: Өглөө квадрат зэрэг, орой язгуур</h2>
+        <p class="hint">Одоогийн цаг өглөө эсвэл орой гэдгээс хамаарна.</p>
+        <div class="result-area">
+            <script>
+                var now = new Date();
+                var hour = now.getHours(); 
+
+                // Хэрэглэгчээс тоо авна
+                var n = prompt("Бодлого 5 (Өглөө квадрат зэрэг, орой язгуур) - Тоо оруулна уу:");
+
+                if (!n) {
+                    document.write("Утга хоосон байна!");
+                } else {
+                    n = Number(n);
+
+                    if (isNaN(n)) {
+                        document.write("Тоон утга оруулна уу!");
+                    } else {
+                        document.write("Одоогийн цаг: " + hour + " цаг<br>");
+
+                        // Өглөө гэж 0–11, орой гэж 12–23 гэж үзье
+                        if (hour < 12) {
+                            // Өглөө: 2 зэрэг
+                            var sq = n * n;
+                            document.write("Одоо өглөө тул " + n + "-ын 2 зэрэгийг олъё.<br>");
+                            document.write(n + "² = " + sq);
+                        } else {
+                            // Орой: язгуур
+                            if (n < 0) {
+                                document.write("Одоо орой, язгуур олох ёстой ч сөрөг тооны язгуур бодит тоон дээр тодорхойлогдохгүй.");
+                            } else {
+                                var root = Math.sqrt(n);
+                                document.write("Одоо орой тул " + n + "-ын язгуурыг олъё.<br>");
+                                document.write("√" + n + " = " + root);
+                            }
+                        }
+                    }
+                }
+            </script>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
