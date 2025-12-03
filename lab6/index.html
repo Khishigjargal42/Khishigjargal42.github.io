@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Spotify – Web Player: Music for everyone</title>
+
+  <!-- SEO BASICS -->
+  <meta name="description" content="Play millions of songs and podcasts for free. Listen to your favorite music on Spotify web player." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://example.com/" />
+
+  <!-- Open Graph (for social sharing) -->
+  <meta property="og:title" content="Spotify – Web Player: Music for everyone" />
+  <meta property="og:description" content="Play millions of songs and podcasts for free on Spotify web player." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="https://example.com/images/spotify-preview.png" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" aria-label="Main navigation">
+      <div class="logo">
+        <!-- Use text + SVG/placeholder to avoid copyright issues -->
+        <div class="logo-icon" aria-hidden="true"></div>
+        <span class="logo-text">Spotify</span>
+      </div>
+
+      <nav class="main-nav">
+        <a href="#" class="nav-item active">
+          <span>Home</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span>Search</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span>Your Library</span>
+        </a>
+      </nav>
+
+      <section class="playlists" aria-label="User playlists">
+        <div class="playlists-header">
+          <span>Your Playlists</span>
+          <button class="btn-text">+ Create</button>
+        </div>
+        <ul class="playlist-list">
+          <li><a href="#">Liked Songs</a></li>
+          <li><a href="#">Workout Mix</a></li>
+          <li><a href="#">Chill Vibes</a></li>
+          <li><a href="#">Top Hits 2025</a></li>
+        </ul>
+      </section>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-area">
+      <header class="topbar">
+        <div class="breadcrumbs">
+          <button class="round-btn" aria-label="Go back">&lt;</button>
+          <button class="round-btn" aria-label="Go forward">&gt;</button>
+        </div>
+
+        <div class="topbar-right">
+          <form class="search-form" role="search" aria-label="Search music">
+            <input type="search" placeholder="What do you want to listen to?" />
+          </form>
+          <button class="btn-upgrade">Upgrade</button>
+          <button class="btn-user" aria-label="Open profile menu">
+            <span class="user-avatar">A</span>
+            <span class="user-name">Alex</span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <h1 class="visually-hidden">Spotify Web Player – Home</h1>
+
+        <!-- SECTION: Recently played -->
+        <section class="section">
+          <header class="section-header">
+            <h2>Good afternoon</h2>
+          </header>
+
+          <div class="card-row">
+            <article class="card card-horizontal">
+              <img src="https://via.placeholder.com/80" alt="Cover: Daily Mix 1" />
+              <div class="card-info">
+                <h3>Daily Mix 1</h3>
+                <p>Mixed for you</p>
+              </div>
+            </article>
+
+            <article class="card card-horizontal">
+              <img src="https://via.placeholder.com/80" alt="Cover: Chill Vibes" />
+              <div class="card-info">
+                <h3>Chill Vibes</h3>
+                <p>Relax & unwind</p>
+              </div>
+            </article>
+
+            <article class="card card-horizontal">
+              <img src="https://via.placeholder.com/80" alt="Cover: Focus Flow" />
+              <div class="card-info">
+                <h3>Focus Flow</h3>
+                <p>Beats to focus</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECTION: Customized for the user -->
+        <section class="section">
+          <header class="section-header">
+            <h2>Made for Alex</h2>
+            <a href="#" class="see-all">See all</a>
+          </header>
+
+          <div class="card-row">
+            <article class="card">
+              <img src="https://via.placeholder.com/180" alt="Cover: Discover Weekly" />
+              <div class="card-info">
+                <h3>Discover Weekly</h3>
+                <p>Your weekly mix of fresh tracks.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <img src="https://via.placeholder.com/180" alt="Cover: Release Radar" />
+              <div class="card-info">
+                <h3>Release Radar</h3>
+                <p>New releases every Friday.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <img src="https://via.placeholder.com/180" alt="Cover: Daily Mix 2" />
+              <div class="card-info">
+                <h3>Daily Mix 2</h3>
+                <p>More of what you love.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECTION: Popular playlists -->
+        <section class="section">
+          <header class="section-header">
+            <h2>Popular playlists</h2>
+            <a href="#" class="see-all">See all</a>
+          </header>
+
+          <div class="card-row">
+            <article class="card">
+              <img src="https://via.placeholder.com/180" alt="Cover: Top 50 Global" />
+              <div class="card-info">
+                <h3>Top 50 – Global</h3>
+                <p>The most played tracks right now.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <img src="https://via.placeholder.com/180" alt="Cover: Peaceful Piano" />
+              <div class="card-info">
+                <h3>Peaceful Piano</h3>
+                <p>Chill piano to keep you calm.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <img src="https://via.placeholder.com/180" alt="Cover: RapCaviar" />
+              <div class="card-info">
+                <h3>RapCaviar</h3>
+                <p>New rap hits updated regularly.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-column">
+          <h3>Company</h3>
+          <a href="#">About</a>
+          <a href="#">Jobs</a>
+          <a href="#">For the Record</a>
+        </div>
+        <div class="footer-column">
+          <h3>Communities</h3>
+          <a href="#">For Artists</a>
+          <a href="#">Developers</a>
+          <a href="#">Advertising</a>
+        </div>
+        <div class="footer-column">
+          <h3>Useful links</h3>
+          <a href="#">Support</a>
+          <a href="#">Web Player</a>
+          <a href="#">Free Mobile App</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- PLAYER BAR (fixed) -->
+  <div class="player-bar" aria-label="Now playing controls">
+    <div class="player-now">
+      <img src="https://via.placeholder.com/56" alt="Song cover" />
+      <div>
+        <div class="track-title">Song Title</div>
+        <div class="track-artist">Artist Name</div>
+      </div>
+    </div>
+
+    <div class="player-controls">
+      <button>&lt;&lt;</button>
+      <button id="play-pause">Play</button>
+      <button>&gt;&gt;</button>
+    </div>
+
+    <div class="player-extra">
+      <span>🔊</span>
+      <input type="range" min="0" max="100" value="70" />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
