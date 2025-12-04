@@ -578,8 +578,8 @@ main {
 .player-progress {
   display: flex;
   align-items: center;
-  gap: 8px;
-  width: 100%;
+  gap: 0px;
+  width: 40%;
   margin: 4px 16px 8px;
 }
 
@@ -590,7 +590,96 @@ main {
   text-align: center;
 }
 
-/* Progress bar styling */
+.player-bar {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--player-bg);
+  border-top: 1px solid var(--border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  gap: 16px;
+}
+
+/* left info */
+.player-now {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-width: 0;
+}
+
+/* NEW: center column (controls on top, bar under it) */
+.player-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* center horizontally */
+  gap: 6px;
+}
+
+/* controls row */
+.player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+/* buttons styling (from earlier answer) */
+.control-btn {
+  border: none;
+  background: transparent;
+  color: #b3b3b3;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.control-btn.small {
+  font-size: 16px;
+  width: 32px;
+  height: 32px;
+}
+
+.control-btn.big {
+  font-size: 18px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #ffffff1a;
+  color: #ffffff;
+}
+
+.control-btn:hover {
+  color: #ffffff;
+}
+
+.control-btn.big:hover {
+  transform: scale(1.05);
+}
+
+/* progress bar centered under controls */
+.player-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 500px;      /* so it doesn’t get insanely wide */
+}
+
+.player-progress .time {
+  font-size: 10px;
+  color: var(--text-muted);
+  min-width: 30px;
+  text-align: center;
+}
+
 #progress-bar {
   flex: 1;
   appearance: none;
@@ -600,7 +689,6 @@ main {
   cursor: pointer;
 }
 
-/* Thumb (slider handle) */
 #progress-bar::-webkit-slider-thumb {
   appearance: none;
   width: 10px;
@@ -612,6 +700,54 @@ main {
 #progress-bar:hover::-webkit-slider-thumb {
   background: var(--accent);
 }
-#progress-bar:focus-visible {
-  outline: 2px solid var(--accent);
+
+/* right side (volume) */
+.player-extra {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+@media (max-width: 600px) {
+  .player-bar {
+    flex-wrap: wrap;
+  }
+
+  .player-now {
+    flex: 1 1 100%;
+    order: 1;
+  }
+
+  .player-center {
+    flex: 1 1 100%;
+    order: 2;
+  }
+
+  .player-extra {
+    flex: 1 1 100%;
+    justify-content: center;
+    order: 3;
+  }
+}
+/* Volume slider style */
+#volume {
+  appearance: none;
+  width: 100px;
+  height: 4px;
+  background: #555;  /* default track */
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Thumb (the draggable ball) */
+#volume::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.2s ease;
+}
+
+#volume:hover::-webkit-slider-thumb {
+  background: var(--accent); /* green hover */
 }
