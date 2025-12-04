@@ -36,7 +36,7 @@ body {
 .app {
   flex: 1;
   display: flex;
-  min-height: 0; /* important for flex children scrolling */
+  min-height: 0;
 }
 
 /* SIDEBAR */
@@ -55,12 +55,13 @@ body {
   gap: 8px;
 }
 
-.logo-icon {
-  width: 32px;
+.logo-img {
+  width: 32px;    
   height: 32px;
-  border-radius: 50%;
-  background: var(--accent);
+  border-radius: 25px;
+  object-fit: contain;
 }
+
 
 .logo-text {
   font-weight: 700;
@@ -85,9 +86,11 @@ body {
 }
 
 .nav-item:hover,
+.nav-item:focus-visible,
 .nav-item.active {
   background: var(--bg-hover);
   color: var(--text-main);
+  outline: none;
 }
 
 .playlists {
@@ -113,10 +116,13 @@ body {
   color: var(--text-muted);
   cursor: pointer;
   font-size: 13px;
+  padding: 0;
 }
 
-.btn-text:hover {
+.btn-text:hover,
+.btn-text:focus-visible {
   color: var(--text-main);
+  outline: none;
 }
 
 .playlist-list {
@@ -134,8 +140,10 @@ body {
   font-size: 13px;
 }
 
-.playlist-list a:hover {
+.playlist-list a:hover,
+.playlist-list a:focus-visible {
   color: var(--text-main);
+  outline: none;
 }
 
 /* MAIN AREA */
@@ -171,8 +179,10 @@ body {
   cursor: pointer;
 }
 
-.round-btn:hover {
+.round-btn:hover,
+.round-btn:focus-visible {
   background: #222;
+  outline: none;
 }
 
 .topbar-right {
@@ -187,10 +197,11 @@ body {
   border-radius: 20px;
   border: none;
   padding: 6px 12px;
-  min-width: 180px;
+  min-width: 200px;
+  font-size: 14px;
 }
 
-.search-form input:focus {
+.search-form input:focus-visible {
   outline: 2px solid var(--accent);
 }
 
@@ -204,8 +215,10 @@ body {
   cursor: pointer;
 }
 
-.btn-upgrade:hover {
+.btn-upgrade:hover,
+.btn-upgrade:focus-visible {
   transform: scale(1.03);
+  outline: none;
 }
 
 .btn-user {
@@ -218,6 +231,12 @@ body {
   color: var(--text-main);
   padding: 4px 10px;
   cursor: pointer;
+}
+
+.btn-user:hover,
+.btn-user:focus-visible {
+  background: #222;
+  outline: none;
 }
 
 .user-avatar {
@@ -243,6 +262,23 @@ main {
   overflow-y: auto;
 }
 
+.page-title {
+  font-size: 0; /* visually hidden but still there for SEO */
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Intro section */
+.intro {
+  margin-top: 4px;
+  margin-bottom: 16px;
+  max-width: 640px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
 .section {
   margin-bottom: 24px;
 }
@@ -265,33 +301,82 @@ main {
   color: var(--text-muted);
 }
 
-.see-all:hover {
+.see-all:hover,
+.see-all:focus-visible {
   text-decoration: underline;
+  color: var(--text-main);
+  outline: none;
 }
 
-/* Cards: flex rows */
+/* Card rows using flexbox */
 .card-row {
   display: flex;
-  gap: 16px;
   flex-wrap: wrap;
+  gap: 16px;
 }
 
+.card-row-horizontal {
+  align-items: stretch;
+}
+
+/* Cards */
 .card {
   background: var(--bg-card);
   border-radius: 8px;
   padding: 12px;
-  width: 180px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  flex: 1 1 180px;
+  max-width: 220px;
+}
+
+.card:hover,
+.card:focus-within {
+  background: var(--bg-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.card-image-wrapper {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .card img {
   width: 100%;
-  border-radius: 6px;
+  height: auto;
   display: block;
+}
+
+.card-play-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  background: var(--accent);
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover .card-play-btn,
+.card:focus-within .card-play-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-play-btn:focus-visible {
+  outline: 2px solid #fff;
 }
 
 .card-info h3 {
@@ -305,17 +390,15 @@ main {
   color: var(--text-muted);
 }
 
-.card:hover {
-  background: var(--bg-hover);
-  transform: translateY(-2px);
-}
-
-/* Horizontal cards */
+/* Horizontal variant */
 .card-horizontal {
   flex-direction: row;
   align-items: center;
-  width: 100%;
-  max-width: 320px;
+  max-width: 360px;
+}
+
+.card-horizontal .card-image-wrapper {
+  flex: 0 0 80px;
 }
 
 .card-horizontal img {
@@ -352,9 +435,11 @@ main {
   font-size: 13px;
 }
 
-.footer-column a:hover {
+.footer-column a:hover,
+.footer-column a:focus-visible {
   text-decoration: underline;
   color: var(--text-main);
+  outline: none;
 }
 
 /* PLAYER BAR */
@@ -376,6 +461,7 @@ main {
   display: flex;
   gap: 8px;
   align-items: center;
+  min-width: 0;
 }
 
 .player-now img {
@@ -386,6 +472,9 @@ main {
 
 .track-title {
   font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .track-artist {
@@ -404,6 +493,12 @@ main {
   background: transparent;
   color: var(--text-main);
   cursor: pointer;
+}
+
+.player-controls button:hover,
+.player-controls button:focus-visible {
+  color: var(--accent);
+  outline: none;
 }
 
 .player-extra {
@@ -425,7 +520,7 @@ main {
   border: 0;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE (flexbox adjustments) */
 @media (max-width: 900px) {
   .sidebar {
     display: none;
@@ -440,7 +535,83 @@ main {
     padding: 0 12px 80px;
   }
 
-  .card-row {
-    justify-content: center;
+  .card {
+    flex: 1 1 calc(50% - 16px);
+    max-width: none;
   }
+
+  .player-bar {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    flex: 1 1 100%;
+  }
+
+  .topbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .search-form input {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .btn-upgrade {
+    display: none;
+  }
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.player-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin: 4px 16px 8px;
+}
+
+.player-progress .time {
+  font-size: 10px;
+  color: var(--text-muted);
+  min-width: 30px;
+  text-align: center;
+}
+
+/* Progress bar styling */
+#progress-bar {
+  flex: 1;
+  appearance: none;
+  height: 4px;
+  background: #555;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Thumb (slider handle) */
+#progress-bar::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+#progress-bar:hover::-webkit-slider-thumb {
+  background: var(--accent);
+}
+#progress-bar:focus-visible {
+  outline: 2px solid var(--accent);
 }
