@@ -2,9 +2,9 @@
 <html lang="mn">
 <head>
   <meta charset="UTF-8" />
-  <title>
-    Spotify
-  </title>
+
+  <!-- Better, longer, keyword-rich title -->
+  <title>Онлайн Хөгжим Сонсох | Mongolian Music Web Player</title>
 
   <!-- Bilingual SEO description -->
   <meta
@@ -18,14 +18,14 @@
   <!-- Bilingual keywords (MN + EN) -->
   <meta
     name="keywords"
-    content="хөгжим сонсох онлайн, монгол хөгжим, монгол хит дуу, тоглуулагч, playlist, spotify төст веб, веб тоглуулагч, music streaming Mongolia, Mongolian music player, Spotify clone, HTML CSS JS Flexbox project, web player, playlists"
+    content="онлайн хөгжим сонсох, монгол хөгжим, монгол хит дуу, тоглуулагч, playlist, spotify төст веб, веб тоглуулагч, music streaming Mongolia, Mongolian music player, Spotify clone, HTML CSS JS Flexbox project, web player, playlists"
   />
 
   <!-- Change this to your real domain when deployed -->
   <link rel="canonical" href="https://your-domain.com/" />
 
   <!-- Open Graph (MN + EN) -->
-  <meta property="og:title" content="Spotify Веб Тоглуулагч | Mongolian Spotify-Style Web Player" />
+  <meta property="og:title" content="Онлайн Хөгжим Сонсох | Mongolian Music Web Player" />
   <meta
     property="og:description"
     content="Онлайн хөгжим сонсох, монгол болон дэлхийн хит дуунуудыг тоглуулах Spotify маягийн веб тоглуулагч. Mongolian music web player clone."
@@ -61,12 +61,11 @@
     <!-- SIDEBAR -->
     <aside class="sidebar" aria-label="Үндсэн цэс">
       <div class="logo">
-         <img src="images/logo.png" alt="Music Web Player" class="logo-img" />
-         <span class="logo-text">Music Player</span>
+        <img src="images/logo.png" alt="Music Web Player" class="logo-img" />
+        <span class="logo-text">Music Player</span>
       </div>
 
-
-      <nav class="main-nav" aria-label="nav">
+      <nav class="main-nav" aria-label="Навигаци">
         <a href="#" class="nav-item active" aria-current="page">
           <span>Нүүр</span>
         </a>
@@ -120,17 +119,16 @@
 
       <!-- MAIN CONTENT -->
       <main>
-        <!-- H1 for SEO (visually collapsed) -->
+        <!-- H1 for SEO -->
         <h1 class="page-title">
-          Spotify
+          Онлайн хөгжим сонсох – Mongolian Music Web Player
         </h1>
 
-        <!-- Intro section with MN + EN text -->
+        <!-- Intro section -->
         <section class="intro">
           <p>
             Монгол болон дэлхийн шилдэг дуунуудыг нэг дороос сонсож, өөрийн
-            тоглуулах жагсаалтыг (playlist) үүсгэн дуртай үедээ тоглуулаарай.
-            
+            тоглуулах жагсаалтуудыг (playlist) үүсгэн дуртай үедээ тоглуулаарай.
           </p>
         </section>
 
@@ -143,7 +141,7 @@
           <div class="card-row card-row-horizontal">
             <article class="card card-horizontal" data-track="Daily Mix 1">
               <div class="card-image-wrapper">
-                <img src="images/daily-mix.jpg" alt="Daily Mix 1" />
+                <img loading="lazy" src="images/daily-mix.jpg" alt="Daily Mix 1 тоглуулах жагсаалт" />
                 <button class="card-play-btn" type="button" aria-label="Daily Mix Play">▶</button>
               </div>
               <div class="card-info">
@@ -154,7 +152,7 @@
 
             <article class="card card-horizontal" data-track="Chill Vibes">
               <div class="card-image-wrapper">
-                <img src="images/chill-vibes1.jpg" alt="Chill Vibes" />
+                <img loading="lazy" src="images/chill-vibes1.jpg" alt="Chill Vibes тоглуулах жагсаалт" />
                 <button class="card-play-btn" type="button" aria-label="Play Chill Vibes">▶</button>
               </div>
               <div class="card-info">
@@ -165,18 +163,18 @@
 
             <article class="card card-horizontal" data-track="Focus Flow">
               <div class="card-image-wrapper">
-                <img src="images/focus-flow.jpg" alt="Chill Vibes" />
-                <button class="card-play-btn" type="button" aria-label="Chill Vibes">▶</button>
+                <img loading="lazy" src="images/focus-flow.jpg" alt="Focus Flow тоглуулах жагсаалт" />
+                <button class="card-play-btn" type="button" aria-label="Play Focus Flow">▶</button>
               </div>
               <div class="card-info">
-                <h3>Chill Vibes</h3>
+                <h3>Focus Flow</h3>
                 <p>Ажил, хичээлдээ төвлөрөхөд</p>
               </div>
             </article>
           </div>
         </section>
 
-        <!-- Made for User -->
+        <!-- Suggested for user -->
         <section class="section">
           <header class="section-header">
             <h2>Suggested for you</h2>
@@ -186,7 +184,7 @@
           <div class="card-row">
             <article class="card" data-track="Discover Weekly">
               <div class="card-image-wrapper">
-                <img src="images/discover.jpg" alt="Discover Weekly" />
+                <img loading="lazy" src="images/discover.jpg" alt="Discover Weekly playlist" />
                 <button class="card-play-btn" type="button" aria-label="Шинэ дуунууд тоглуулах">▶</button>
               </div>
               <div class="card-info">
@@ -197,8 +195,8 @@
 
             <article class="card" data-track="Монголоороо">
               <div class="card-image-wrapper">
-                <img src="images/hu.jpg" alt="The hu album cover" />
-                <button class="card-play-btn" type="button" aria-label="Play">▶</button>
+                <img loading="lazy" src="images/hu.jpg" alt="The Hu альбомын зураг" />
+                <button class="card-play-btn" type="button" aria-label="Play The Hu">▶</button>
               </div>
               <div class="card-info">
                 <h3>The Hu</h3>
@@ -208,8 +206,8 @@
 
             <article class="card" data-track="Daily Mix 2">
               <div class="card-image-wrapper">
-                <img src="images/daily-mix2.jpg" alt="Daily mix" />
-                <button class="card-play-btn" type="button" aria-label="Play Daily Mix">▶</button>
+                <img loading="lazy" src="images/daily-mix2.jpg" alt="Daily Mix 2 playlist" />
+                <button class="card-play-btn" type="button" aria-label="Play Daily Mix 2">▶</button>
               </div>
               <div class="card-info">
                 <h3>Daily Mix 2</h3>
@@ -219,7 +217,7 @@
 
             <article class="card" data-track="Release Radar">
               <div class="card-image-wrapper">
-                <img src="images/release-radar.jpg" alt="Release Radar" />
+                <img loading="lazy" src="images/release-radar.jpg" alt="Release Radar playlist" />
                 <button class="card-play-btn" type="button" aria-label="Play Release Radar">▶</button>
               </div>
               <div class="card-info">
@@ -227,17 +225,17 @@
                 <p>Таны сонголтод санал болгох микс</p>
               </div>
             </article>
-            
+
             <article class="card" data-track="Christmas Vibes">
               <div class="card-image-wrapper">
-                <img src="images/ny.jpg" alt="Christmas Vibes" />
+                <img loading="lazy" src="images/ny.jpg" alt="Christmas Vibes playlist" />
                 <button class="card-play-btn" type="button" aria-label="Play Christmas Vibes">▶</button>
               </div>
               <div class="card-info">
                 <h3>Christmas Vibes</h3>
                 <p>Шинэ жилийн уур амьсгал</p>
               </div>
-            </article>            
+            </article>
           </div>
         </section>
 
@@ -251,7 +249,7 @@
           <div class="card-row">
             <article class="card" data-track="Mongol Melody">
               <div class="card-image-wrapper">
-                <img src="images/mng.jpg" alt="Mongol Melody album cover" />
+                <img loading="lazy" src="images/mng.jpg" alt="Mongol Melody album cover" />
                 <button class="card-play-btn" type="button" aria-label="Mongol Melody тоглуулах">▶</button>
               </div>
               <div class="card-info">
@@ -262,7 +260,7 @@
 
             <article class="card" data-track="Soft Music">
               <div class="card-image-wrapper">
-                <img src="images/soft-music.jpg" alt="Soft Music" />
+                <img loading="lazy" src="images/soft-music.jpg" alt="Soft Music playlist" />
                 <button class="card-play-btn" type="button" aria-label="Play Soft Music">▶</button>
               </div>
               <div class="card-info">
@@ -273,7 +271,7 @@
 
             <article class="card" data-track="Pop Mix">
               <div class="card-image-wrapper">
-                <img src="images/pop-mix.jpg" alt="Pop Mix" />
+                <img loading="lazy" src="images/pop-mix.jpg" alt="Pop Mix playlist" />
                 <button class="card-play-btn" type="button" aria-label="Play Pop Mix">▶</button>
               </div>
               <div class="card-info">
@@ -284,29 +282,29 @@
 
             <article class="card" data-track="90s Soft Pop Mix">
               <div class="card-image-wrapper">
-                <img src="images/90s.jpg" alt="90s Soft Pop Mix" />
+                <img loading="lazy" src="images/90s.jpg" alt="90s Soft Pop Mix playlist" />
                 <button class="card-play-btn" type="button" aria-label="Play 90s Soft Pop Mix">▶</button>
               </div>
               <div class="card-info">
                 <h3>90s Soft Pop Mix</h3>
                 <p>90-ээд оны поп дуунууд</p>
               </div>
-            </article>             
+            </article>
 
             <article class="card" data-track="Stranger Things">
               <div class="card-image-wrapper">
-                <img src="images/st5.jpg" alt="Stranger Things Mix" />
+                <img loading="lazy" src="images/st5.jpg" alt="Stranger Things playlist" />
                 <button class="card-play-btn" type="button" aria-label="Play Stranger Things">▶</button>
               </div>
               <div class="card-info">
                 <h3>Stranger Things</h3>
-                <p>Stranger Things Season 5  omg</p>
+                <p>Stranger Things Season 5 omg</p>
               </div>
             </article>
                        
           </div>
         </section>
-    
+      
 
       <!-- FOOTER -->
       <footer class="footer">
@@ -329,12 +327,12 @@
       </footer>
     </div>
   </div>
-</main>
+  </main>
 
   <!-- PLAYER BAR -->
   <div class="player-bar" aria-label="Одоо тоглож буй">
     <div class="player-now">
-      <img id="player-cover" src="images/wham.jpg" alt="Last Christmas song" />
+      <img id="player-cover" src="images/wham.jpg" alt="Last Christmas song cover" />
       <div>
         <div id="player-title" class="track-title">Last Christmas</div>
         <div id="player-artist" class="track-artist">Wham!</div>
@@ -353,14 +351,14 @@
         <input id="progress-bar" type="range" min="0" max="100" value="0" />
         <span class="time total-time">3:45</span>
       </div>
-  </div>
-
-      <div class="player-extra">
-        <span aria-hidden="true">🔊</span>
-        <label class="visually-hidden" for="volume">Дууны хэмжээ</label>
-        <input id="volume" type="range" min="0" max="100" value="70" />
-      </div>
     </div>
+
+    <div class="player-extra">
+      <span aria-hidden="true">🔊</span>
+      <label class="visually-hidden" for="volume">Дууны хэмжээ</label>
+      <input id="volume" type="range" min="0" max="100" value="70" />
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
